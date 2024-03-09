@@ -46,7 +46,7 @@ const dataCategories = [
   },
   {
     id: 5,
-    category: 'Anime'
+    category: 'Animes'
   }
 ];
 
