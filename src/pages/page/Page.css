@@ -1,0 +1,40 @@
+.menu-desktop,
+.menu-mobile {
+  padding: 0 20px;
+  background-color: #333;
+  color: white;
+}
+
+.menu-desktop {
+  min-height: 100%;
+  width: 15%;
+}
+
+#content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.container-desktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+.container-mobile {
+  position: relative;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  min-height: 90vh;
+  max-height: 90vh;
+}
+
+.menu-mobile {
+  position: absolute;
+  top: 100%;
+  min-height: 10vh;
+  width: 100%;
+}
