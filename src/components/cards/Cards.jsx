@@ -6,6 +6,8 @@ import {
   CardMedia,
   Typography
 } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
+import './Card.css';
 
 /* eslint-disable react/prop-types */
 const Cards = ({
@@ -25,27 +27,14 @@ const Cards = ({
             title="green iguana"
           />
           {/* <img src={imageUrl} alt="Logo" style={slideStyles} /> */}
-          <Box>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              className="description"
-            >
-              Titulo
+          <Box sx={{ margin: '15px' }}>
+            <Typography variant="h6">{description.name}</Typography>
+            <Typography variant="body2" color="text.secondary">
+              {description.year} - {description.genre}
             </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              className="description"
-            >
-              Anio - genero
-            </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              className="description"
-            >
-              Stars
+            <Typography variant="body2" color="text.secondary">
+              {description.stars}
+              <StarIcon fontSize="small" sx={{ color: 'gold' }} />
             </Typography>
           </Box>
         </CardContent>

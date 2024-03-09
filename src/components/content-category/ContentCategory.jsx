@@ -6,33 +6,58 @@ import ListCards from '../list-cards/ListCards';
 const categoryData = [
   {
     id: 1,
-    name: 'Spiderman',
     imageUrl:
-      'https://wallpapers.com/images/high/spiderman-1366x768-dnkwrtg111y9d8hu.webp'
+      'https://wallpapers.com/images/high/spiderman-1366x768-dnkwrtg111y9d8hu.webp',
+    description: {
+      name: 'Spiderman',
+      year: '2017',
+      genre: 'Action',
+      stars: '5'
+    }
   },
   {
     id: 2,
-    name: 'Superman',
     imageUrl:
-      'https://wallpapers.com/images/high/image-man-of-steel-wallpaper-superman-34759958-1280-dc-ywtl7gk6azox6l96.webp'
+      'https://wallpapers.com/images/high/image-man-of-steel-wallpaper-superman-34759958-1280-dc-ywtl7gk6azox6l96.webp',
+    description: {
+      name: 'Superman',
+      year: '2007',
+      genre: 'Action',
+      stars: '4'
+    }
   },
   {
     id: 3,
-    name: 'Iron Man 1',
     imageUrl:
-      'https://wallpapers.com/images/hd/iron-man-repulser-87jqqc12bkvqa38a.webp'
+      'https://wallpapers.com/images/hd/iron-man-repulser-87jqqc12bkvqa38a.webp',
+    description: {
+      name: 'Iron Man 1',
+      year: '2018',
+      genre: 'Action',
+      stars: '5'
+    }
   },
   {
     id: 4,
-    name: 'Capitan America',
     imageUrl:
-      'https://wallpapers.com/images/high/captain-america-android-2560-x-1600-ke1dn4ni9e9lorxq.webp'
+      'https://wallpapers.com/images/high/captain-america-android-2560-x-1600-ke1dn4ni9e9lorxq.webp',
+    description: {
+      name: 'Capitan America',
+      year: '2012',
+      genre: 'Action',
+      stars: '2'
+    }
   },
   {
     id: 5,
-    name: 'Spiderman 2',
     imageUrl:
-      'https://wallpapers.com/images/high/black-spiderman-tobey-maguire-ixu2s8zl68o17tma.webp'
+      'https://wallpapers.com/images/high/black-spiderman-tobey-maguire-ixu2s8zl68o17tma.webp',
+    description: {
+      name: 'Spiderman 2',
+      year: '2012',
+      genre: 'Action',
+      stars: '3'
+    }
   }
 ];
 
@@ -49,7 +74,7 @@ const ContentCategory = ({ handleCardClick }) => {
           minWidth={250}
           key={movie.id}
           movieId={movie.id}
-          description={'testDescription'}
+          description={movie.description}
           imageUrl={movie.imageUrl}
           handleCardClick={handleCardClick}
         />

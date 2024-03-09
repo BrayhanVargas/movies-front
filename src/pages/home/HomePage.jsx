@@ -11,19 +11,34 @@ const dataSlides = [
     id: 10,
     imageUrl:
       'https://wallpapers.com/images/featured-full/avengers-vm16xv4a69smdauy.jpg',
-    name: 'Avengers'
+    description: {
+      name: 'Avengers',
+      year: '2012',
+      genre: 'Action',
+      stars: '3'
+    }
   },
   {
     id: 11,
     imageUrl:
       'https://wallpapers.com/images/high/spiderman-black-and-red-i1i2nmcafdcevpen.webp',
-    name: 'Spiderman'
+    description: {
+      name: 'Spiderman',
+      year: '2012',
+      genre: 'Action',
+      stars: '3'
+    }
   },
   {
     id: 12,
     imageUrl:
       'https://wallpapers.com/images/high/the-100-television-series-p389841deayu6ky2.webp',
-    name: 'The 100'
+    description: {
+      name: 'The 100',
+      year: '2012',
+      genre: 'Action',
+      stars: '3'
+    }
   }
 ];
 
@@ -86,7 +101,7 @@ const HomePage = () => {
   return (
     <div className="container">
       {/* {slides.length && <ImageSlider slides={slides} />} */}
-      <div>
+      <div className="releases">
         <Typography variant="h4">Nuevos Estrenos</Typography>
         <ListCards>
           {slides.map((slide) => (
@@ -96,6 +111,7 @@ const HomePage = () => {
               movieId={slide.id}
               minWidth={700}
               handleCardClick={handleCardClick}
+              description={slide.description}
             />
           ))}
         </ListCards>

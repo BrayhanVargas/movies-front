@@ -11,3 +11,10 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.menu-links {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

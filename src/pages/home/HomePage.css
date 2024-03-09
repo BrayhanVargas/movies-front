@@ -3,6 +3,6 @@
   flex-direction: column;
 }
 
-.category {
+.category, .releases {
   margin: 0 20px;
 }
