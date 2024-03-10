@@ -6,6 +6,8 @@ This is a movie app, where we have a login, we can see the movies classified by 
 
 5 endpoints for login, get latest releases, get categories, get movies by category and get data about each movie.
 
+![Alt text](feed.png)
+
 # Movies Frontend
 
 This is the frontend of a movies application that allows see information about different movies. It is developed with React js, Material UI and also Prettier, Eslint and Husky to code formatter.
