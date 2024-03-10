@@ -47,11 +47,41 @@ The project follows an organized structure inspired by components architecture, 
   GET /categories
 ```
 
+Example response service
+
+dataCategories = [
+{
+id: 1,
+category: 'Recomendadas para ti'
+},
+{
+id: 2,
+category: 'Seguir viendo'
+},
+{...}]
+
 #### Get realeses
 
 ```http
   GET /releases
 ```
+
+Example response service
+
+dataRealeses = [
+{
+id: 10,
+imageUrl:
+'https://wallpapers.com/images/featured-full/avengers-vm16xv4a69smdauy.jpg',
+description: {
+name: 'Avengers',
+year: '2012',
+genre: 'Action',
+stars: '3'
+}
+},
+{...}
+]
 
 #### Get movies by category
 
