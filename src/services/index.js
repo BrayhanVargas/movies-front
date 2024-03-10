@@ -1,11 +1,16 @@
+/* eslint-disable no-unused-vars */
 /**
  * Services layer
  * Try to simulate the behavior in case you make calls to an API.
+ * Here should be the logic to handle API services
  */
 
 import { categoryData, dataCategories, dataRealeses } from './data';
 
-export const login = () => {};
+export const login = (credentials) => {
+  //Here API call to verify credentials
+  return true;
+};
 
 export const getCategories = () => {
   return dataCategories;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import LoginForm from '../../components/forms/login/LoginForm';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../../services';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -20,8 +21,11 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     try {
-      e.preventDefault();
-      navigate('/home');
+      // HTTP query to login
+      if (login(formData)) {
+        e.preventDefault();
+        navigate('/home');
+      }
     } catch (error) {
       console.error('Error al enviar la solicitud:', error.message);
     }

@@ -38,32 +38,37 @@ The project follows an organized structure inspired by components architecture, 
 #### Login
 
 ```http
-  POST
+  POST /login
 ```
 
 #### Get categories
 
 ```http
-  GET
+  GET /categories
 ```
-
-| Parameter | Type | Description |
-| :-------- | :--- | :---------- |
-
-#### Get movies by category
-
-```http
-  GET
-```
-
-| Parameter | Type | Description |
-| :-------- | :--- | :---------- |
 
 #### Get realeses
 
 ```http
-  GET
+  GET /releases
 ```
 
-| Parameter | Type | Description |
-| :-------- | :--- | :---------- |
+#### Get movies by category
+
+```http
+  GET /movies
+```
+
+| Parameter | Type   | Description    |
+| :-------- | :----- | :------------- |
+| id        | number | Id of category |
+
+#### Get movie
+
+```http
+  GET /movie
+```
+
+| Parameter | Type   | Description |
+| :-------- | :----- | :---------- |
+| id        | number | Id of movie |
