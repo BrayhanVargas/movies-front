@@ -6,9 +6,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Person2Icon from '@mui/icons-material/Person2';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 const Menu = () => {
-  const isMobile = useMediaQuery('(min-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 1250px)');
+  console.log(isMobile);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -16,46 +18,33 @@ const Menu = () => {
   };
   return (
     <>
-      {isMobile ? (
+      {!isMobile ? (
         <div className="menu-container">
-          <SupportIcon
-            fontSize="large"
-            sx={{ marginBottom: '20px', paddingTop: '20px' }}
-          />
-          <div className="menu-links">
+          <div>
+            <div className="menu-logo">
+              <Typography className="icon-btn--txt" variant="h5">
+                Movies App
+              </Typography>
+            </div>
             <div>
-              <IconButton
-                type="button"
-                onClick={() => handleLogout()}
-                variant="contained"
-              >
-                <HomeIcon fontSize="large" />
-                <Typography>Inicio</Typography>
+              <IconButton type="button" onClick={() => navigate('/home')}>
+                <HomeIcon fontSize="large" className="icon-btn" />
+                <Typography className="icon-btn--txt">Inicio</Typography>
               </IconButton>
-              <IconButton
-                type="button"
-                onClick={() => handleLogout()}
-                variant="contained"
-              >
-                <Person2Icon fontSize="large" />
-                <Typography>Guardadas</Typography>
+              <IconButton type="button" onClick={() => navigate('/saved')}>
+                <BookmarksIcon fontSize="large" className="icon-btn" />
+                <Typography className="icon-btn--txt">Guardadas</Typography>
               </IconButton>
-              <IconButton
-                type="button"
-                onClick={() => handleLogout()}
-                variant="contained"
-              >
-                <Person2Icon fontSize="large" />
-                <Typography>Perfil</Typography>
+              <IconButton type="button" onClick={() => navigate('/profile')}>
+                <Person2Icon fontSize="large" className="icon-btn" />
+                <Typography className="icon-btn--txt">Perfil</Typography>
               </IconButton>
             </div>
-            <IconButton
-              type="button"
-              onClick={() => handleLogout()}
-              variant="contained"
-            >
-              <LogoutIcon fontSize="large" />
-              <Typography>Cerrar Sesion</Typography>
+          </div>
+          <div>
+            <IconButton type="button" onClick={() => handleLogout()}>
+              <LogoutIcon fontSize="large" className="icon-btn" />
+              <Typography className="icon-btn--txt">Cerrar Sesion</Typography>
             </IconButton>
           </div>
         </div>

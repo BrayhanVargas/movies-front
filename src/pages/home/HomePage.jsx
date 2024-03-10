@@ -20,7 +20,7 @@ const HomePage = () => {
 
   /**
    * CustomCategory is a banner, in this case we are looking at the latest versions,
-   * this component was designed as an external component to a category, it could change over time.
+   * this component was designed as an external component to a Categories, it could change over time.
    * @param {object} slides - Data used to view last releases.
    * @returns {JSX.Element} -  JSX representing the custom category banner.
    */

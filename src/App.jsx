@@ -23,14 +23,10 @@ const theme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          color: 'white'
+          color: 'white',
+          justifyContent: 'flex-start'
         }
       }
-    }
-  },
-  palette: {
-    primary: {
-      main: '#8d4229'
     }
   }
 });
@@ -40,6 +36,7 @@ const router = createBrowserRouter([
     path: '/login',
     element: <LoginPage />
   },
+  //TODO: create routes privates
   {
     path: '/home',
     element: <Page path="/home" />

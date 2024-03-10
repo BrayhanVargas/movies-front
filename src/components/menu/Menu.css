@@ -2,7 +2,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .menu-container--mobile {
@@ -12,15 +13,16 @@
   align-items: center;
 }
 
-.menu-links {
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.menu-container div {
+  margin: 15px 0;
 }
 
-.menu-links div {
-  margin-top: 30px;
+.icon-btn {
+  margin-right: 40px;
+}
+
+.menu-logo {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
