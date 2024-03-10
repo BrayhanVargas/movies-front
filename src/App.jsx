@@ -43,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Page path="/home" />
+  },
+  {
+    path: '/saved',
+    element: <Page path="/saved" />
+  },
+  {
+    path: '/profile',
+    element: <Page path="/profile" />
   }
 ]);
 
