@@ -35,6 +35,8 @@ The project follows an organized structure inspired by components architecture, 
 
 ## API Reference
 
+Assuming the following endpoints to obtain the data:
+
 #### Login
 
 ```http
@@ -95,6 +97,49 @@ stars: '3'
 | Parameter | Type   | Description    |
 | :-------- | :----- | :------------- |
 | id        | number | Id of category |
+
+Example response service:
+
+```json
+dataCategory = [
+  {
+    categoryId: 1,
+    category: 'Recommended'
+    movies: [
+      {
+        id: 1,
+        imageUrl:
+          'https://wallpapers.com/images/high/spiderman-1366x768-dnkwrtg111y9d8hu.webp',
+        description: {
+          name: 'Spiderman',
+          year: '2017',
+          genre: 'Recommended',
+          stars: '5'
+        }
+      },
+      {
+        ...
+      }]
+  },{
+    categoryId: 2,
+    category: 'Keep Watching',
+    movies: [
+      {
+        id: 1,
+        imageUrl:
+          'https://wallpapers.com/images/high/spiderman-1366x768-dnkwrtg111y9d8hu.webp',
+        description: {
+          name: 'Spiderman',
+          year: '2017',
+          genre: 'Keep Watching',
+          stars: '5'
+        }
+      },
+      {
+        ...
+      }]
+  }
+```
 
 #### Get movie
 
