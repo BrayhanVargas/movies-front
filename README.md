@@ -24,60 +24,44 @@ Ensure Node.js is installed.
 
 ## Folder Structure
 
-The project follows an organized structure inspired by the MVC (Model-View-Controller) architecture, enhancing maintainability and clarity. Key components are organized as follows:
+The project follows an organized structure inspired by components architecture, enhancing maintainability and clarity. Key components are organized as follows:
 
     /src: Contains the application's source code.
-        /components: Controllers handling business logic.
-        /pages: Database model definitions.
-        /services: Services encapsulating application logic and shareable between controllers.
+        /components: Components handling views.
+        /pages: Main route components.
+        /services: Services encapsulating application data and shareable between backend.
 
 ## API Reference
 
 #### Login
 
 ```http
-  GET /user?userId={userId}
+  POST
 ```
 
 #### Get categories
 
 ```http
-  GET /users
+  GET
 ```
+
+| Parameter | Type | Description |
+| :-------- | :--- | :---------- |
 
 #### Get movies by category
 
 ```http
-  POST /user
+  GET
 ```
 
-| Parameter   | Type     | Description                  |
-| :---------- | :------- | :--------------------------- |
-| `firstName` | `string` | **Required**. Full name user |
-| `lastName`  | `string` | **Required**. Full name user |
-| `phone`     | `number` | **Required**. Phone user     |
-| `email`     | `string` | **Required**. Email user     |
+| Parameter | Type | Description |
+| :-------- | :--- | :---------- |
 
 #### Get realeses
 
 ```http
-  PUT /users?userId={userId}
+  GET
 ```
 
-| Parameter   | Type     | Description           |
-| :---------- | :------- | :-------------------- |
-| `userId`    | `number` | **Required**. Id user |
-| `firstName` | `string` | Full name user        |
-| `lastName`  | `string` | Full name user        |
-| `phone`     | `number` | Phone user            |
-| `email`     | `string` | Email user            |
-
-#### Delete user
-
-```http
-  DELETE /users?userId={userId}
-```
-
-| Parameter | Type     | Description           |
-| :-------- | :------- | :-------------------- |
-| `userId`  | `number` | **Required**. Id user |
+| Parameter | Type | Description |
+| :-------- | :--- | :---------- |
