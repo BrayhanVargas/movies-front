@@ -362,8 +362,6 @@ const categoryData = [
 
 export const login = () => {};
 
-export const logout = () => {};
-
 export const getCategories = () => {
   return dataCategories;
 };
