@@ -19,6 +19,13 @@ const theme = createTheme({
           padding: '0px'
         }
       }
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: 'white'
+        }
+      }
     }
   },
   palette: {

@@ -1,8 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  margin: 50px 20px;
 }
 
-.category, .releases {
-  margin: 0 20px;
+.category,
+.releases {
 }

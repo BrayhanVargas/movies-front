@@ -4,103 +4,30 @@ import ContentCategory from '../../components/content-category/ContentCategory';
 import { Typography } from '@mui/material';
 import ListCards from '../../components/list-cards/ListCards';
 import Cards from '../../components/cards/Cards';
-import CustomizedDialogs from '../../components/dialog/Dialog';
-
-const dataSlides = [
-  {
-    id: 10,
-    imageUrl:
-      'https://wallpapers.com/images/featured-full/avengers-vm16xv4a69smdauy.jpg',
-    description: {
-      name: 'Avengers',
-      year: '2012',
-      genre: 'Action',
-      stars: '3'
-    }
-  },
-  {
-    id: 11,
-    imageUrl:
-      'https://wallpapers.com/images/high/spiderman-black-and-red-i1i2nmcafdcevpen.webp',
-    description: {
-      name: 'Spiderman',
-      year: '2012',
-      genre: 'Action',
-      stars: '3'
-    }
-  },
-  {
-    id: 12,
-    imageUrl:
-      'https://wallpapers.com/images/high/the-100-television-series-p389841deayu6ky2.webp',
-    description: {
-      name: 'The 100',
-      year: '2012',
-      genre: 'Action',
-      stars: '3'
-    }
-  }
-];
-
-const dataCategories = [
-  {
-    id: 1,
-    category: 'Recomendadas para ti'
-  },
-  {
-    id: 2,
-    category: 'Seguir viendo'
-  },
-  {
-    id: 3,
-    category: 'Documentales'
-  },
-  {
-    id: 4,
-    category: 'Terror'
-  },
-  {
-    id: 5,
-    category: 'Anime'
-  }
-];
+import { getCategories, getRealeses } from '../../services';
 
 const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [open, setOpen] = useState(false);
 
   /* This useEffect is  to simulate the life cycle of the component
-  in case the images come from some query to the backend */
+  in case the data come from some query to the backend */
   useEffect(() => {
-    setSlides(dataSlides);
-    setCategories(dataCategories);
+    setSlides(getRealeses);
+    setCategories(getCategories);
   }, []);
 
-  const handleCardClick = (id) => {
-    setOpen(true);
-    console.log(id);
-  };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const Categories = ({ categories, handleCardClick }) => {
+  const Categories = ({ categories }) => {
     return categories.map((category) => (
       <div key={category.id} className="category">
         <Typography variant="h5">{category.category}</Typography>
-        <ContentCategory handleCardClick={handleCardClick} />
+        <ContentCategory categoryId={category.id} />
       </div>
     ));
   };
 
   return (
     <div className="container">
-      {/* {slides.length && <ImageSlider slides={slides} />} */}
       <div className="releases">
         <Typography variant="h4">Nuevos Estrenos</Typography>
         <ListCards>
@@ -110,21 +37,12 @@ const HomePage = () => {
               imageUrl={slide.imageUrl}
               movieId={slide.id}
               minWidth={700}
-              handleCardClick={handleCardClick}
               description={slide.description}
             />
           ))}
         </ListCards>
       </div>
-      {categories && (
-        <Categories
-          categories={categories}
-          handleCardClick={handleCardClick}
-          handleClickOpen={handleClickOpen}
-          handleClose={handleClose}
-        />
-      )}
-      <CustomizedDialogs open={open} handleClose={handleClose} />
+      {categories && <Categories categories={categories} />}
     </div>
   );
 };

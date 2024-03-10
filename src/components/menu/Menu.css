@@ -18,3 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.menu-links div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
