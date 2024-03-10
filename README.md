@@ -47,8 +47,9 @@ The project follows an organized structure inspired by components architecture, 
   GET /categories
 ```
 
-Example response service
+Example response service:
 
+```json
 dataCategories = [
 {
 id: 1,
@@ -59,6 +60,7 @@ id: 2,
 category: 'Seguir viendo'
 },
 {...}]
+```
 
 #### Get realeses
 
@@ -66,13 +68,13 @@ category: 'Seguir viendo'
   GET /releases
 ```
 
-Example response service
+Example response service:
 
+```json
 dataRealeses = [
 {
 id: 10,
-imageUrl:
-'https://wallpapers.com/images/featured-full/avengers-vm16xv4a69smdauy.jpg',
+imageUrl: 'imageUrl',
 description: {
 name: 'Avengers',
 year: '2012',
@@ -82,6 +84,7 @@ stars: '3'
 },
 {...}
 ]
+```
 
 #### Get movies by category
 
