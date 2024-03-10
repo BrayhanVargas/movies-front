@@ -36,11 +36,7 @@ const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
     <Card sx={{ minWidth: minWidth, margin: '15px' }}>
       <CardActionArea onClick={() => handleClickOpen(movieId)}>
         <CardContent>
-          <CardMedia
-            sx={{ height: 500 }}
-            image={imageUrl}
-            title="green iguana"
-          />
+          <CardMedia sx={{ height: 500 }} image={imageUrl} />
           <Box sx={{ margin: '15px' }}>
             <Typography variant="h6">{description.name}</Typography>
             <Typography variant="body2" color="text.secondary">

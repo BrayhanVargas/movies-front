@@ -7,7 +7,7 @@ import ProfilePage from '../profile/Profile';
 import SavedPage from '../saved/Saved';
 
 const Page = ({ path }) => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 1250px)');
 
   const View = ({ path }) => {
     if (path === '/home') return <HomePage />;

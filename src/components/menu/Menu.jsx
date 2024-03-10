@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './Menu.css';
 import { IconButton, Typography } from '@mui/material';
-import SupportIcon from '@mui/icons-material/Support';
 import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Person2Icon from '@mui/icons-material/Person2';
@@ -10,7 +9,6 @@ import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 const Menu = () => {
   const isMobile = useMediaQuery('(max-width: 1250px)');
-  console.log(isMobile);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -33,7 +31,7 @@ const Menu = () => {
               </IconButton>
               <IconButton type="button" onClick={() => navigate('/saved')}>
                 <BookmarksIcon fontSize="large" className="icon-btn" />
-                <Typography className="icon-btn--txt">Guardadas</Typography>
+                <Typography className="icon-btn--txt">Pendientes</Typography>
               </IconButton>
               <IconButton type="button" onClick={() => navigate('/profile')}>
                 <Person2Icon fontSize="large" className="icon-btn" />
@@ -50,23 +48,17 @@ const Menu = () => {
         </div>
       ) : (
         <div className="menu-container--mobile">
-          <SupportIcon
-            fontSize="large"
-            sx={{ marginBottom: '20px', paddingTop: '20px' }}
-          />
-          <IconButton
-            type="button"
-            onClick={() => handleLogout()}
-            variant="contained"
-          >
-            <HomeIcon fontSize="large" sx={{ color: 'white' }} />
+          <IconButton type="button" onClick={() => navigate('/home')}>
+            <HomeIcon fontSize="large" />
           </IconButton>
-          <IconButton
-            type="button"
-            onClick={() => handleLogout()}
-            variant="contained"
-          >
-            <LogoutIcon fontSize="large" sx={{ color: 'white' }} />
+          <IconButton type="button" onClick={() => navigate('/saved')}>
+            <BookmarksIcon fontSize="large" />
+          </IconButton>
+          <IconButton type="button" onClick={() => navigate('/profile')}>
+            <Person2Icon fontSize="large" />
+          </IconButton>
+          <IconButton type="button" onClick={() => handleLogout()}>
+            <LogoutIcon fontSize="large" />
           </IconButton>
         </div>
       )}
