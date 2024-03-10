@@ -21,7 +21,6 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     try {
-      // HTTP query to login
       if (login(formData)) {
         e.preventDefault();
         navigate('/home');

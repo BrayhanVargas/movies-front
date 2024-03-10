@@ -57,7 +57,7 @@ export const dataCategories = [
   }
 ];
 
-export const categoryData = [
+export const dataCategory = [
   {
     categoryId: 1,
     movies: [
@@ -359,3 +359,14 @@ export const categoryData = [
     ]
   }
 ];
+
+export const getDataMovie = (movieId) => {
+  let dataMovies = [];
+
+  dataCategory.forEach((category) => {
+    dataMovies = dataMovies.concat(category.movies);
+  });
+
+  const movie = dataMovies.find((movie) => movie.id === movieId);
+  return movie;
+};

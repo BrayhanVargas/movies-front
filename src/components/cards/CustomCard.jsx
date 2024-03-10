@@ -9,14 +9,24 @@ import {
 import StarIcon from '@mui/icons-material/Star';
 import './Card.css';
 import CustomizedDialogs from '../dialog/Dialog';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getMovie } from '../../services';
 
 /* eslint-disable react/prop-types */
 const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
   const [open, setOpen] = useState(false);
+  const [movieData, setMovieData] = useState({});
+
+  useEffect(() => {
+    if (!open) return;
+    setMovieData(getMovie(movieId));
+    console.log(movieData);
+  }, [open, movieId, movieData]);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
