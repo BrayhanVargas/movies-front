@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
+/**
+ * ContentCategory is a component that displays on a slide the list of movies corresponding to the categoryId
+ * @param {number} categoryId - Id used to get movies.
+ * @returns {JSX.Element} -  JSX representing the ContentCategory.
+ */
 import { useEffect, useState } from 'react';
-import Cards from '../cards/Cards';
+import CustomCard from '../cards/CustomCard';
 import ListCards from '../list-cards/ListCards';
 import { getMoviesbyCategory } from '../../services';
 
@@ -10,14 +15,13 @@ const ContentCategory = ({ categoryId }) => {
   /* This useEffect is  to simulate the life cycle of the component
   in case the data come from some query to the backend */
   useEffect(() => {
-    console.log('ct', categoryId);
     setMovies(getMoviesbyCategory(categoryId));
   }, [categoryId]);
 
   return (
     <ListCards>
       {movies.map((movie) => (
-        <Cards
+        <CustomCard
           minWidth={250}
           key={movie.id}
           movieId={movie.id}

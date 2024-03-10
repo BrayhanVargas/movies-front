@@ -12,7 +12,7 @@ import CustomizedDialogs from '../dialog/Dialog';
 import { useState } from 'react';
 
 /* eslint-disable react/prop-types */
-const Cards = ({ description, imageUrl, movieId, minWidth }) => {
+const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -57,4 +57,4 @@ const Cards = ({ description, imageUrl, movieId, minWidth }) => {
   );
 };
 
-export default Cards;
+export default CustomCard;

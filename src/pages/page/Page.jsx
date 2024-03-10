@@ -8,7 +8,6 @@ import SavedPage from '../saved/Saved';
 
 const Page = ({ path }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  console.log('isMobile', isMobile);
 
   const View = ({ path }) => {
     if (path === '/home') return <HomePage />;
