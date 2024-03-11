@@ -8,9 +8,9 @@ import {
 } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import './Card.css';
-import CustomizedDialogs from '../dialog/Dialog';
 import { useEffect, useState } from 'react';
 import { getMovie } from '../../services';
+import ContentDetailsDialog from '../dialog/ContentDetailsDialog';
 
 /* eslint-disable react/prop-types */
 const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
@@ -20,7 +20,6 @@ const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
   useEffect(() => {
     if (!open) return;
     setMovieData(getMovie(movieId));
-    console.log(movieData);
   }, [open, movieId, movieData]);
 
   const handleClickOpen = () => {
@@ -58,7 +57,12 @@ const CustomCard = ({ description, imageUrl, movieId, minWidth }) => {
           </Box>
         </CardContent>
       </CardActionArea>
-      <CustomizedDialogs open={open} handleClose={handleClose} />
+      <ContentDetailsDialog
+        open={open}
+        handleClose={handleClose}
+        title={description.name}
+        description={description}
+      />
     </Card>
   );
 };
